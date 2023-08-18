@@ -20,6 +20,7 @@ struct StatisticsSubmitFinishedTabView: View {
                     .padding(.horizontal, 16)
             }
         }
+        .navigationBarTitle("고객 통계", displayMode: .large)
     }
 }
 

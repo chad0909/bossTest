@@ -35,25 +35,27 @@ struct ReceiptView: View {
 
 
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible())],spacing: 16) {
-                    ForEach(receiptList) { receipt in
-                        NavigationLink(destination: ReceiptCheckView(receipt: receipt )) {
-                            ReceiptListRowView(receipt: receipt)
+        NavigationView{
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible())],spacing: 16) {
+                        ForEach(receiptList) { receipt in
+                            NavigationLink(destination: ReceiptCheckView(receipt: receipt )) {
+                                ReceiptListRowView(receipt: receipt)
+                            }
                         }
-                    }
-                    .tint(.black)
-                }.shadow(color: .black.opacity(0.16), radius: 10, x: 0, y: 0)
-                .padding(.horizontal, 20)
-                .padding(.top, 30)
+                        .tint(.black)
+                    }.shadow(color: .black.opacity(0.16), radius: 10, x: 0, y: 0)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 30)
+                }
+                Spacer()
             }
-            Spacer()
+            
+            .background(.yellow.opacity(0.2))
+            .navigationTitle("영수증")
+            .navigationBarTitleDisplayMode(.automatic)
         }
-        
-        .background(.yellow.opacity(0.2))
-        .navigationTitle("영수증")
-        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 

@@ -11,32 +11,34 @@ struct StatisticsView: View {
     @State private var selectedTab = 0
     
     var body: some View {
-        ZStack{
-            VStack(spacing: 0){
-                
-                ScrollView{
-                    VStack(spacing: 0){
-                        Picker("", selection: $selectedTab) {
-                            Text("발급 완료").tag(0)
-                            Text("사용 완료").tag(1)
+        NavigationView{
+            ZStack{
+                VStack(spacing: 0){
+                    
+                    ScrollView{
+                        VStack(spacing: 0){
+                            Picker("", selection: $selectedTab) {
+                                Text("발급 완료").tag(0)
+                                Text("사용 완료").tag(1)
+                            }
+                            .pickerStyle(.segmented)
+                            .padding()
+                            
+                            if selectedTab == 0 {
+                                StatisticsSubmitFinishedTabView()
+                            } else {
+                                StatisticsUsedFinishedTabView()
+                            }
+                            
+                            Spacer()
                         }
-                        .pickerStyle(.segmented)
-                        .padding()
-                        
-                        if selectedTab == 0 {
-                            StatisticsSubmitFinishedTabView()
-                        } else {
-                            StatisticsUsedFinishedTabView()
-                        }
-                        
-                        Spacer()
                     }
+                    Spacer()
                 }
-                Spacer()
+                .navigationBarTitle("고객 통계", displayMode: .large)
             }
-            .navigationBarTitle("고객 통계", displayMode: .large)
+            .background(.yellow.opacity(0.2))
         }
-        .background(.yellow.opacity(0.2))
     }
 }
 

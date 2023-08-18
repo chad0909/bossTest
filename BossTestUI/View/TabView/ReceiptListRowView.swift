@@ -26,6 +26,7 @@ struct ReceiptListRowView: View {
                     .frame(width: 5, height: 10)
             }
         }
+        .navigationBarTitle("영수증", displayMode: .large)
         .padding(.horizontal, 24)
         .padding(.vertical, 13)
         .padding(.top, 17)
