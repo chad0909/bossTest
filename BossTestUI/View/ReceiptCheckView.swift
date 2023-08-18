@@ -2,16 +2,24 @@
 import SwiftUI
 
 struct ReceiptCheckView: View {
-    let userName: String = "Caadddd"
     @State private var showSubmitAlert = false
     @State private var showBanryeoSheet = false
-    
+    @Environment(\.presentationMode) var presentationMode
+    let receipt: Receipt
+
     var body: some View {
         VStack(spacing: 20) {
             HStack {
+                VStack(alignment: .leading){
+                    Text("닉네임 \(receipt.userName)")
+                        .font(.system(size: 14, weight: .regular))
+                    Text("\(receipt.quest.coupon)")
+                        .font(.system(size: 16, weight: .medium))
+                    Text("\(receipt.quest.quest)")
+                        .font(.system(size: 16, weight: .medium))
+                    
+                }
                 Spacer()
-                Text("유저: \(userName)")
-                    .font(.system(size: 15, weight: .regular))
             }
             .padding(.top, 20)
             ScrollView {
@@ -20,13 +28,11 @@ struct ReceiptCheckView: View {
                     .scaledToFit()
                     .frame(minHeight: 550, maxHeight: 700)
                     .background(.gray.opacity(0.5))
-                
             }
             .padding(.horizontal, 16)
             
             HStack{
                 Button {
-                    //                    showCancelAlert = true
                     showBanryeoSheet = true
                 } label: {
                     Text("반려하기")
@@ -44,7 +50,6 @@ struct ReceiptCheckView: View {
                 } label: {
                     Text("발급하기")
                         .font(.system(size: 20, weight: .medium))
-                    
                         .foregroundColor(.white)
                     
                 }
@@ -53,7 +58,7 @@ struct ReceiptCheckView: View {
                 .cornerRadius(12)
                 .alert(isPresented: $showSubmitAlert) {
                     Alert(title: Text("쿠폰을 발급하시겠습니까?"), message: Text("발급 후 되돌릴 수 없으니 유의 부탁드립니다"),
-                          primaryButton: .default(Text("발급")),
+                          primaryButton: .default(Text("발급"), action: summit),
                           secondaryButton: .cancel(Text("취소")))
                 }
             }
@@ -67,12 +72,16 @@ struct ReceiptCheckView: View {
         .navigationBarBackButtonHidden()
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                HStack {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 17)
-                    Text("뒤로")
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 17)
+                        Text("뒤로")
+                    }
                 }
             }
         }
@@ -83,11 +92,14 @@ struct ReceiptCheckView: View {
     func goHome() {
         //Home으로 이동
     }
+    func summit() {
+        // TODO: 쿠폰 발행 로직 및 해당 영수증 리스트에서 삭제
+    }
 }
 
 struct ReceiptCheckView_Previews: PreviewProvider {
     static var previews: some View {
-        ReceiptCheckView()
+        ReceiptCheckView(receipt: Receipt(userName: "chad", image: Image(systemName: "circle"), quest: questList[0]))
     }
 }
 
@@ -98,25 +110,27 @@ struct SheetView: View {
     
     let initialText: String = "반려하신 사유를 작성해주세요"
     @State var text: String = ""
-    var reasonList: [String] = ["영수증이 불명확합니다", "영수증과 퀘스트가 일치하지 않습니다"]
-    
+    var reasonList: [String] = ["직접 입력", "영수증이 불명확합니다", "영수증과 퀘스트가 일치하지 않습니다"]
+    var reasonSelectedIndex: Int = 0
     var body: some View {
         VStack(alignment: .center, spacing: 16) {
-            Text("영수증 반려하기")
+            
             HStack {
-                Text("반려 사유 입력하기")
+                Text("영수증 반려 사유 입력하기")
                     .font(.system(size: 18, weight: .bold))
                 Spacer()
             }
             Menu {
                 ForEach(reasonList, id: \.self) { reason in
-                    Button(reason) {
-                        text = reason
+                    Button {
+                        text = (reason == reasonList[0] ? "" : reason)
+                    } label: {
+                        Text(reason)
                     }
                 }
             } label: {
                 HStack {
-                    Text("직접 입력")
+                    Text(reasonList.contains(text) ? text: reasonList[0])
                         .font(.system(size: 14, weight: .medium))
                     Spacer()
                     Image(systemName: "chevron.down")
@@ -164,6 +178,7 @@ struct SheetView: View {
                       secondaryButton:.cancel(Text("취소")))
             }
         }
+        .padding(.vertical, 32)
         .padding(.horizontal, 16)
     }
     
