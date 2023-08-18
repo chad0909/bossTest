@@ -71,7 +71,7 @@ struct QuestAddView: View {
                         alertMessage = true
                     } label: {
                         Text("제출하기")
-                            .padding(.vertical, 14)
+                            .padding(.vertical, 20)
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                     }
@@ -87,13 +87,16 @@ struct QuestAddView: View {
                     
                     
                 }
-//                .padding(.bottom, 83)
+                .cornerRadius(20)
+                .padding(.bottom, 20)
+                .padding(.horizontal, 20)
+                
+                
                 
             }
-            
-            
             .navigationBarBackButtonHidden()
             .navigationBarTitle("", displayMode: .inline)
+//            .toolbar(.hidden, for: .tabBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {

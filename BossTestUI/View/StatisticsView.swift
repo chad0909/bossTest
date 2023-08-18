@@ -11,12 +11,22 @@ struct StatisticsView: View {
     @State private var selectedTab = 0
     
     var body: some View {
-        NavigationView{
+//        NavigationView{
             ZStack{
                 VStack(spacing: 0){
                     
                     ScrollView{
+                        
                         VStack(spacing: 0){
+                            
+                            HStack{
+                                Text("고객 통계")
+                                    .font(.system(size: 34, weight: .bold))
+                                Spacer()
+                            }
+                            .padding(.leading, 16)
+                            .padding(.top, 23)
+                            
                             Picker("", selection: $selectedTab) {
                                 Text("발급 완료").tag(0)
                                 Text("사용 완료").tag(1)
@@ -33,12 +43,12 @@ struct StatisticsView: View {
                             Spacer()
                         }
                     }
+                    .padding(.top, 10)
                     Spacer()
                 }
-                .navigationBarTitle("고객 통계", displayMode: .large)
             }
             .background(.yellow.opacity(0.2))
-        }
+//        }
     }
 }
 

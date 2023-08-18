@@ -10,27 +10,28 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        
+        NavigationView{
             TabView {
-                    QuestView()
-                .tabItem {
-                    Image(systemName: "star.fill")
-                    Text("퀘스트")
-                }
-                    ReceiptView()
+                QuestView()
+                    .tabItem {
+                        Image(systemName: "star.fill")
+                        Text("퀘스트")
+                    }
+                ReceiptView()
                 
-                .tabItem{
-                    Image(systemName: "wallet.pass.fill")
-                    Text("영수증")
-                }
+                    .tabItem{
+                        Image(systemName: "wallet.pass.fill")
+                        Text("영수증")
+                    }
                 
-                    StatisticsView()
+                StatisticsView()
                 
-                .tabItem {
-                    Image(systemName: "chart.bar.fill")
-                    Text("통계")
-                }
-           }
+                    .tabItem {
+                        Image(systemName: "chart.bar.fill")
+                        Text("통계")
+                    }
+            }
+        }
         }
     }
             
