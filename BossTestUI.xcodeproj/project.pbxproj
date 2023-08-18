@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50FBF602A8F938F00ACF024 /* QuestCheckTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */; };
+		E50FBF622A8F93B200ACF024 /* QuestPostTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */; };
+		E50FBF662A8F9F0300ACF024 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF652A8F9F0300ACF024 /* Tab.swift */; };
+		E50FBF682A8FA4C300ACF024 /* QuestAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF672A8FA4C300ACF024 /* QuestAddView.swift */; };
+		E50FBF6B2A8FB73600ACF024 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF6A2A8FB73600ACF024 /* StatisticsView.swift */; };
+		E50FBF6D2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF6C2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift */; };
+		E50FBF6F2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF6E2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift */; };
+		E50FBF722A8FB86B00ACF024 /* StatisticsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */; };
+		E50FBF742A8FC92000ACF024 /* RecieptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF732A8FC92000ACF024 /* RecieptView.swift */; };
 		E5AD2A142A8F37C4009F3125 /* BossTestUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */; };
 		E5AD2A162A8F37C4009F3125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD2A152A8F37C4009F3125 /* ContentView.swift */; };
 		E5AD2A182A8F37C6009F3125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AD2A172A8F37C6009F3125 /* Assets.xcassets */; };
@@ -16,6 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCheckTabView.swift; sourceTree = "<group>"; };
+		E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPostTabView.swift; sourceTree = "<group>"; };
+		E50FBF652A8F9F0300ACF024 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		E50FBF672A8FA4C300ACF024 /* QuestAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAddView.swift; sourceTree = "<group>"; };
+		E50FBF6A2A8FB73600ACF024 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		E50FBF6C2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsSubmitFinishedTabView.swift; sourceTree = "<group>"; };
+		E50FBF6E2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsUsedFinishedTabView.swift; sourceTree = "<group>"; };
+		E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsComponent.swift; sourceTree = "<group>"; };
+		E50FBF732A8FC92000ACF024 /* RecieptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecieptView.swift; sourceTree = "<group>"; };
 		E5AD2A102A8F37C4009F3125 /* BossTestUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BossTestUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossTestUIApp.swift; sourceTree = "<group>"; };
 		E5AD2A152A8F37C4009F3125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,9 +55,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E50FBF642A8F9EF200ACF024 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				E50FBF652A8F9F0300ACF024 /* Tab.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		E50FBF692A8FB6BE00ACF024 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E5AD2A232A8F37E1009F3125 /* QuestComponent.swift */,
+				E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		E50FBF702A8FB82E00ACF024 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				E50FBF6C2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift */,
+				E50FBF6E2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift */,
+				E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */,
+				E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		E5AD2A072A8F37C4009F3125 = {
 			isa = PBXGroup;
 			children = (
+				E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */,
+				E5AD2A152A8F37C4009F3125 /* ContentView.swift */,
 				E5AD2A122A8F37C4009F3125 /* BossTestUI */,
 				E5AD2A112A8F37C4009F3125 /* Products */,
 			);
@@ -56,10 +104,8 @@
 		E5AD2A122A8F37C4009F3125 /* BossTestUI */ = {
 			isa = PBXGroup;
 			children = (
-				E5AD2A252A8F37F0009F3125 /* QuestView.swift */,
 				E5AD2A222A8F37CF009F3125 /* View */,
-				E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */,
-				E5AD2A152A8F37C4009F3125 /* ContentView.swift */,
+				E50FBF642A8F9EF200ACF024 /* Tabbar */,
 				E5AD2A172A8F37C6009F3125 /* Assets.xcassets */,
 				E5AD2A192A8F37C6009F3125 /* BossTestUI.entitlements */,
 				E5AD2A1A2A8F37C6009F3125 /* Preview Content */,
@@ -78,7 +124,12 @@
 		E5AD2A222A8F37CF009F3125 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E5AD2A232A8F37E1009F3125 /* QuestComponent.swift */,
+				E5AD2A252A8F37F0009F3125 /* QuestView.swift */,
+				E50FBF672A8FA4C300ACF024 /* QuestAddView.swift */,
+				E50FBF6A2A8FB73600ACF024 /* StatisticsView.swift */,
+				E50FBF732A8FC92000ACF024 /* RecieptView.swift */,
+				E50FBF702A8FB82E00ACF024 /* TabView */,
+				E50FBF692A8FB6BE00ACF024 /* Component */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,9 +205,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5AD2A242A8F37E1009F3125 /* QuestComponent.swift in Sources */,
+				E50FBF602A8F938F00ACF024 /* QuestCheckTabView.swift in Sources */,
+				E50FBF722A8FB86B00ACF024 /* StatisticsComponent.swift in Sources */,
 				E5AD2A162A8F37C4009F3125 /* ContentView.swift in Sources */,
+				E50FBF682A8FA4C300ACF024 /* QuestAddView.swift in Sources */,
+				E50FBF6F2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift in Sources */,
+				E50FBF6B2A8FB73600ACF024 /* StatisticsView.swift in Sources */,
+				E50FBF622A8F93B200ACF024 /* QuestPostTabView.swift in Sources */,
 				E5AD2A142A8F37C4009F3125 /* BossTestUIApp.swift in Sources */,
 				E5AD2A262A8F37F0009F3125 /* QuestView.swift in Sources */,
+				E50FBF662A8F9F0300ACF024 /* Tab.swift in Sources */,
+				E50FBF742A8FC92000ACF024 /* RecieptView.swift in Sources */,
+				E50FBF6D2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
