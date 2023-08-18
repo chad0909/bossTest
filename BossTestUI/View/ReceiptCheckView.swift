@@ -3,9 +3,10 @@ import SwiftUI
 
 struct ReceiptCheckView: View {
     @State private var showSubmitAlert = false
-    @State private var showBanryeoSheet = false
+    @State private var showRejectSheet = false
     @Environment(\.presentationMode) var presentationMode
     let receipt: Receipt
+    @State var receiptRejected: Bool = false
 
     var body: some View {
         VStack(spacing: 20) {
@@ -23,17 +24,18 @@ struct ReceiptCheckView: View {
             }
             .padding(.top, 20)
             ScrollView {
-                Image(systemName: "photo")
+                Image(systemName: receipt.imageString)
                     .resizable()
                     .scaledToFit()
+                    .scaleEffect(0.2)
                     .frame(minHeight: 550, maxHeight: 700)
-                    .background(.gray.opacity(0.5))
+                    .background(.gray.opacity(0.2))
             }
             .padding(.horizontal, 16)
             
             HStack{
                 Button {
-                    showBanryeoSheet = true
+                    showRejectSheet = true
                 } label: {
                     Text("반려하기")
                         .font(.system(size: 20, weight: .medium))
@@ -50,8 +52,7 @@ struct ReceiptCheckView: View {
                 } label: {
                     Text("발급하기")
                         .font(.system(size: 20, weight: .medium))
-                        .foregroundColor(.white)
-                    
+                        .foregroundColor(.white) 
                 }
                 .frame(width: 180, height: 50)
                 .background(.pink)
@@ -62,7 +63,6 @@ struct ReceiptCheckView: View {
                           secondaryButton: .cancel(Text("취소")))
                 }
             }
-            
         }
         .padding(.horizontal, 24)
         .padding(.bottom, 60)
@@ -70,6 +70,7 @@ struct ReceiptCheckView: View {
         .navigationTitle("영수증 확인")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
+        .background(Color("BackgroundYellowColor"))
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
@@ -82,32 +83,40 @@ struct ReceiptCheckView: View {
                             .frame(height: 17)
                         Text("뒤로")
                     }
+                    .foregroundColor(.black)
                 }
             }
         }
-        .sheet(isPresented: $showBanryeoSheet) {
-            SheetView(showBanryeoSheet: $showBanryeoSheet)
+        .sheet(isPresented: $showRejectSheet) {
+            SheetView(showRejectSheet: $showRejectSheet, receiptRejected: $receiptRejected).onDisappear {
+                if receiptRejected  {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                  
+                }
+            }
         }
-    }
-    func goHome() {
-        //Home으로 이동
     }
     func summit() {
         // TODO: 쿠폰 발행 로직 및 해당 영수증 리스트에서 삭제
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct ReceiptCheckView_Previews: PreviewProvider {
     static var previews: some View {
-        ReceiptCheckView(receipt: Receipt(userName: "chad", image: Image(systemName: "circle"), quest: questList[0]))
+        ReceiptCheckView(receipt: Receipt(userName: "chad", imageString: "circle", quest: questList[0]))
     }
 }
 
 
 struct SheetView: View {
-    @Binding var showBanryeoSheet: Bool
     @State private var showCancelAlert = false
-    
+    @Binding var showRejectSheet: Bool
+    @Binding var receiptRejected: Bool
+    @Environment(\.presentationMode) var presentationMode
+
     let initialText: String = "반려하신 사유를 작성해주세요"
     @State var text: String = ""
     var reasonList: [String] = ["직접 입력", "영수증이 불명확합니다", "영수증과 퀘스트가 일치하지 않습니다"]
@@ -157,7 +166,6 @@ struct SheetView: View {
             Spacer()
             
             Button {
-                
                 showCancelAlert = true
             } label: {
                 Text("반려하기")
@@ -172,8 +180,11 @@ struct SheetView: View {
                 Alert(title: Text("영수증을 반려하시겠습니까?"), message: Text("반려 후 되돌릴 수 없으니 유의 부탁드립니다"),
                       primaryButton:  .default(Text("반려"),
                                                action: {
-                    showBanryeoSheet = false
-                    //리스트에서 해당 영수증 삭제, 이전 영수증 뷰로 이동
+                    // TODO: 리스트에서 해당 영수증 삭제
+                    showRejectSheet = false
+                    receiptRejected = true
+                   // presentationMode.wrappedValue.dismiss()
+                   
                 }),
                       secondaryButton:.cancel(Text("취소")))
             }
@@ -185,6 +196,6 @@ struct SheetView: View {
 }
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(showBanryeoSheet: .constant(true))
+        SheetView(showRejectSheet: .constant(true), receiptRejected: .constant(false))
     }
 }

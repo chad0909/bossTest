@@ -10,7 +10,7 @@ import SwiftUI
 struct Receipt: Identifiable {
     var id = UUID()
     var userName: String
-    var image: Image // TODO: String? 변경
+    var imageString: String // TODO: String? 변경
     var quest: Quest
 }
 
@@ -24,15 +24,13 @@ var questList: [Quest] = [
     Quest(quest: "아메리카노 00잔 주문", coupon: "아메리카노 1% 할인권")
 ]
 var receiptList: [Receipt] = [
-    Receipt(userName: "chad", image: Image(systemName: "circle"), quest: questList[0]),
-    Receipt(userName: "jjjjjjad", image: Image(systemName: "circle"), quest: questList[0]),
-    Receipt(userName: "zzzzzzzzzzad", image: Image(systemName: "circle"),quest: questList[1])
-
+    Receipt(userName: "chad", imageString: "circle", quest: questList[0]),
+    Receipt(userName: "jjjjjjad", imageString: "star", quest: questList[0]),
+    Receipt(userName: "zzzzzzzzzzad", imageString: "person", quest: questList[1])
 ]
 
 struct ReceiptView: View {
     @State var receiptSelection: Receipt?
-
 
     var body: some View {
         NavigationView{
@@ -51,8 +49,7 @@ struct ReceiptView: View {
                 }
                 Spacer()
             }
-            
-            .background(.yellow.opacity(0.2))
+            .background(Color("BackgroundYellowColor"))
             .navigationTitle("영수증")
             .navigationBarTitleDisplayMode(.automatic)
         }

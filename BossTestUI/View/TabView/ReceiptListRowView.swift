@@ -44,6 +44,6 @@ struct ReceiptListRowView: View {
 
 struct ReceiptListRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ReceiptListRowView(receipt:  Receipt(userName: "chad", image: Image(systemName: "circle"), quest: questList[0])).padding(.vertical, 20).background(.brown)
+        ReceiptListRowView(receipt:  Receipt(userName: "chad", imageString: "circle", quest: questList[0])).padding(.vertical, 20).background(.brown)
     }
 }
