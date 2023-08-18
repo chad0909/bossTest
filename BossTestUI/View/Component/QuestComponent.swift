@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct QuestComponent: View {
-    var couponName: String = "아메리카노 50% 할인권"
-    var questName: String = "오후 2시전 아메리카노 2잔 주문"
+    var couponName: String
+    var questName: String
     var body: some View {
         ZStack
         {
-            Color.yellow.ignoresSafeArea()
             HStack{
                 VStack(alignment: .leading) {
                     Text(couponName)
@@ -23,6 +22,7 @@ struct QuestComponent: View {
                 }
                 Spacer()
             }
+            
             .padding(.leading, 25)
             .padding(.vertical, 21)
             .background(.white)
@@ -35,7 +35,7 @@ struct QuestComponent: View {
 
 struct QuestComponent_Previews: PreviewProvider {
     static var previews: some View {
-        QuestComponent()
+        QuestComponent(couponName: "아메리카노 50% 할인권", questName: "오후 2시전 아메리카노 2잔 주문")
     }
 }
 

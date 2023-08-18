@@ -12,8 +12,9 @@ struct StatisticsComponent: View {
     @State var userName : String = "chad0909"
     
     
-    var couponName: String = "아메리카노 50% 할인권"
-    var questName: String = "오후 2시전 아메리카노 2잔 주문"
+    var couponName: String
+    var questName: String
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(couponName)
@@ -26,10 +27,8 @@ struct StatisticsComponent: View {
                     .font(.system(size: 12, weight: .medium))
                     .foregroundColor(Color.gray)
             }
-            
-            
         }
-        .padding(.horizontal, 24)
+        .padding(.horizontal, 20)
         .padding(.vertical, 30)
         .background(.white)
         .cornerRadius(16)
@@ -38,6 +37,6 @@ struct StatisticsComponent: View {
 
 struct StatisticsComponent_Previews: PreviewProvider {
     static var previews: some View {
-        StatisticsComponent().padding(.vertical, 20).background(.brown)
+        StatisticsComponent(couponName: "ㅇㅇㅇ", questName: "ㅇㅇㅇㅇㅇ").padding(.vertical, 20).background(.brown)
     }
 }

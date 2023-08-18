@@ -12,7 +12,6 @@ struct StatisticsView: View {
     
     var body: some View {
         ZStack{
-            Color.yellow.ignoresSafeArea()
             VStack(spacing: 0){
                 
                 ScrollView{
@@ -37,6 +36,7 @@ struct StatisticsView: View {
             }
             .navigationBarTitle("고객 통계", displayMode: .large)
         }
+        .background(.yellow.opacity(0.2))
     }
 }
 

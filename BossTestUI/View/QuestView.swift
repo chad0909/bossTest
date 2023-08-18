@@ -13,7 +13,6 @@ struct QuestView: View {
     
     var body: some View {
         ZStack{
-            Color.yellow.ignoresSafeArea()
             VStack(spacing:0){
                 ScrollView{
                     VStack(spacing: 0){
@@ -44,7 +43,7 @@ struct QuestView: View {
                                    .font(.system(size: 20, weight: .semibold))
                            }
                            .frame(maxWidth: .infinity)
-                           .background(Color.blue)
+                           .background(Color.yellow)
                     }
                     
                 
@@ -54,6 +53,7 @@ struct QuestView: View {
             }
             
         }
+        .background(.yellow.opacity(0.2))
     }
 }
 

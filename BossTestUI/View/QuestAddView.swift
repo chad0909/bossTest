@@ -19,7 +19,6 @@ struct QuestAddView: View {
     var body: some View {
         
         ZStack{
-            Color.green.ignoresSafeArea()
             VStack{
         //퀘스트란
                 HStack{
@@ -65,6 +64,7 @@ struct QuestAddView: View {
                         Text("제출하기")
                             .padding(.vertical, 14)
                             .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color.black)
                     }
                     .frame(maxWidth: .infinity)
                     .background(Color.blue)
@@ -78,6 +78,7 @@ struct QuestAddView: View {
                     
                     
                 }
+//                .padding(.bottom, 83)
                 
             }
             .navigationBarBackButtonHidden()
@@ -99,6 +100,7 @@ struct QuestAddView: View {
                     }
             }
         }
+        .background(.yellow.opacity(0.2))
 
         
     }
