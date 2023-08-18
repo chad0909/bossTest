@@ -21,7 +21,7 @@ struct ContentView: View {
                     Text("퀘스트")
                 }
                 NavigationView{
-                    RecieptView()
+                    ReceiptView()
                 }
                 .tabItem{
                     Image(systemName: "wallet.pass.fill")
