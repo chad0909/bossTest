@@ -12,11 +12,12 @@ struct QuestView: View {
     @State private var selectedTab = 0
     
     var body: some View {
-        ZStack{
-            VStack(spacing:0){
-                ScrollView{
-                    VStack(spacing: 0){
-                        
+        NavigationView{
+            ZStack{
+                VStack(spacing:0){
+                    ScrollView{
+                        VStack(spacing: 0){
+                            
                             Picker("", selection: $selectedTab) {
                                 Text("게시중").tag(0)
                                 Text("검토중").tag(1)
@@ -24,36 +25,38 @@ struct QuestView: View {
                             
                             .pickerStyle(.segmented)
                             .padding()
-                        
-                        if selectedTab == 0 {
-                            QuestCheckTabView()
-                        } else {
-                            QuestPostTabView()
+                            
+                            if selectedTab == 0 {
+                                QuestCheckTabView()
+                            } else {
+                                QuestPostTabView()
+                            }
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
-                    }
-                }
-
-                    HStack{
-                        NavigationLink(destination: QuestAddView()) {
-                               Text("퀘스트 추가 +")
-                                   .padding(.vertical, 14)
-                                   .foregroundColor(Color.black)
-                                   .font(.system(size: 20, weight: .semibold))
-                           }
-                           .frame(maxWidth: .infinity)
-                           .background(Color.yellow)
                     }
                     
-                
-                Spacer()
-                
+                    HStack{
+                        NavigationLink(destination: QuestAddView()) {
+                            Text("퀘스트 추가 +")
+                                .padding(.vertical, 14)
+                                .foregroundColor(Color.black)
+                                .font(.system(size: 20, weight: .semibold))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .background(Color.yellow)
+                    }
+                    
+                    
+                    Spacer()
+                    
+                    
+                }
                 
             }
-            
+            .background(.yellow.opacity(0.2))
         }
-        .background(.yellow.opacity(0.2))
+        
     }
 }
 

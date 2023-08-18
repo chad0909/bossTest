@@ -25,19 +25,24 @@ struct QuestAddView: View {
                     Spacer()
                     Text("남은 퀘스트 개수 : \(questRemaining)개")
                         .font(.system(size: 15, weight: .regular))
+                        .padding(.trailing, 16)
                 }
-                .padding(.trailing, 16)
                 .padding(.top, 50)
                 
                 HStack{
                     Text("퀘스트")
                         .font(.system(size: 25, weight: .semibold))
+                        .padding(.leading, 16)
                     Spacer()
                 }
-                .padding(.leading, 16)
                 
-                TextField("퀘스트명을 입력하세요", text: $questTextValue)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("퀘스트를 입력하세요", text: $questTextValue, axis: .vertical)
+                    .font(.system(size: 14, weight: .medium))
+                    .frame(minHeight: 80)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(Color(hue: 0, saturation: 0, brightness: 0.96))
+                    .cornerRadius(12)
                     .padding(.horizontal, 16)
                 
                 
@@ -45,14 +50,18 @@ struct QuestAddView: View {
                 HStack{
                     Text("보상")
                         .font(.system(size: 25, weight: .semibold))
+                        .padding(.leading, 16)
                     Spacer()
                 }
-                .padding(.leading, 16)
                 
-                TextField("퀘스트명을 입력하세요", text: $prizeTextValue)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("보상을 입력하세요", text: $prizeTextValue, axis: .vertical)
+                    .font(.system(size: 14, weight: .medium))
+                    .frame(minHeight: 80)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(Color(hue: 0, saturation: 0, brightness: 0.96))
+                    .cornerRadius(12)
                     .padding(.horizontal, 16)
-                
                 
                 
                 Spacer()
@@ -67,7 +76,7 @@ struct QuestAddView: View {
                             .foregroundColor(Color.black)
                     }
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
+                    .background(Color.yellow)
                     .alert(isPresented: $alertMessage) {
                                        Alert(title: Text("퀘스트를 추가하시겠습니까?"), message: Text("추가 후 수정이 제한되니 유의 부탁드립니다"),
                                              primaryButton:  .default(Text("확인") ,action: {
@@ -81,6 +90,8 @@ struct QuestAddView: View {
 //                .padding(.bottom, 83)
                 
             }
+            
+            
             .navigationBarBackButtonHidden()
             .navigationBarTitle("", displayMode: .inline)
             .toolbar {

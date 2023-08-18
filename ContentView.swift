@@ -12,25 +12,20 @@ struct ContentView: View {
     var body: some View {
         
             TabView {
-                NavigationView{
                     QuestView()
-                        .navigationBarTitle("퀘스트", displayMode: .large)
-                }
                 .tabItem {
                     Image(systemName: "star.fill")
                     Text("퀘스트")
                 }
-                NavigationView{
                     ReceiptView()
-                }
+                
                 .tabItem{
                     Image(systemName: "wallet.pass.fill")
                     Text("영수증")
                 }
                 
-                NavigationView{
                     StatisticsView()
-                }
+                
                 .tabItem {
                     Image(systemName: "chart.bar.fill")
                     Text("통계")

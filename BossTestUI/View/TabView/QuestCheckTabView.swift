@@ -20,6 +20,7 @@ struct QuestCheckTabView: View {
                         .padding(.horizontal, 16)
                 }
             }
+            .navigationBarTitle("퀘스트", displayMode: .large)
     }
 }
 
