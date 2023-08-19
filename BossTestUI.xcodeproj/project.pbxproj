@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E50FBF602A8F938F00ACF024 /* QuestCheckTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */; };
 		E50FBF622A8F93B200ACF024 /* QuestPostTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */; };
-		E50FBF662A8F9F0300ACF024 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF652A8F9F0300ACF024 /* Tab.swift */; };
 		E50FBF682A8FA4C300ACF024 /* QuestAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF672A8FA4C300ACF024 /* QuestAddView.swift */; };
 		E50FBF6B2A8FB73600ACF024 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF6A2A8FB73600ACF024 /* StatisticsView.swift */; };
 		E50FBF6D2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF6C2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift */; };
@@ -17,7 +16,9 @@
 		E50FBF722A8FB86B00ACF024 /* StatisticsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */; };
 		E50FBF742A8FC92000ACF024 /* ReceiptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF732A8FC92000ACF024 /* ReceiptView.swift */; };
 		E50FBF762A8FCC5200ACF024 /* ReceiptCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF752A8FCC5200ACF024 /* ReceiptCheckView.swift */; };
-		E50FBF782A8FCC7D00ACF024 /* ReceiptListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF772A8FCC7D00ACF024 /* ReceiptListRowView.swift */; };
+		E50FBF782A8FCC7D00ACF024 /* ReceiptComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF772A8FCC7D00ACF024 /* ReceiptComponent.swift */; };
+		E50FBF7F2A90FAFB00ACF024 /* QuestTopTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF7E2A90FAFB00ACF024 /* QuestTopTabbar.swift */; };
+		E50FBF822A90FB4E00ACF024 /* StatisticsTopTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FBF812A90FB4E00ACF024 /* StatisticsTopTabbar.swift */; };
 		E5AD2A142A8F37C4009F3125 /* BossTestUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */; };
 		E5AD2A162A8F37C4009F3125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5AD2A152A8F37C4009F3125 /* ContentView.swift */; };
 		E5AD2A182A8F37C6009F3125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5AD2A172A8F37C6009F3125 /* Assets.xcassets */; };
@@ -29,7 +30,6 @@
 /* Begin PBXFileReference section */
 		E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestCheckTabView.swift; sourceTree = "<group>"; };
 		E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestPostTabView.swift; sourceTree = "<group>"; };
-		E50FBF652A8F9F0300ACF024 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		E50FBF672A8FA4C300ACF024 /* QuestAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestAddView.swift; sourceTree = "<group>"; };
 		E50FBF6A2A8FB73600ACF024 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		E50FBF6C2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsSubmitFinishedTabView.swift; sourceTree = "<group>"; };
@@ -37,7 +37,9 @@
 		E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsComponent.swift; sourceTree = "<group>"; };
 		E50FBF732A8FC92000ACF024 /* ReceiptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptView.swift; sourceTree = "<group>"; };
 		E50FBF752A8FCC5200ACF024 /* ReceiptCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCheckView.swift; sourceTree = "<group>"; };
-		E50FBF772A8FCC7D00ACF024 /* ReceiptListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptListRowView.swift; sourceTree = "<group>"; };
+		E50FBF772A8FCC7D00ACF024 /* ReceiptComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptComponent.swift; sourceTree = "<group>"; };
+		E50FBF7E2A90FAFB00ACF024 /* QuestTopTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestTopTabbar.swift; sourceTree = "<group>"; };
+		E50FBF812A90FB4E00ACF024 /* StatisticsTopTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsTopTabbar.swift; sourceTree = "<group>"; };
 		E5AD2A102A8F37C4009F3125 /* BossTestUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BossTestUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5AD2A132A8F37C4009F3125 /* BossTestUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossTestUIApp.swift; sourceTree = "<group>"; };
 		E5AD2A152A8F37C4009F3125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,18 +61,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E50FBF642A8F9EF200ACF024 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				E50FBF652A8F9F0300ACF024 /* Tab.swift */,
-			);
-			path = Tabbar;
-			sourceTree = "<group>";
-		};
 		E50FBF692A8FB6BE00ACF024 /* Component */ = {
 			isa = PBXGroup;
 			children = (
 				E5AD2A232A8F37E1009F3125 /* QuestComponent.swift */,
+				E50FBF772A8FCC7D00ACF024 /* ReceiptComponent.swift */,
 				E50FBF712A8FB86B00ACF024 /* StatisticsComponent.swift */,
 			);
 			path = Component;
@@ -83,9 +78,17 @@
 				E50FBF6E2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift */,
 				E50FBF5F2A8F938F00ACF024 /* QuestCheckTabView.swift */,
 				E50FBF612A8F93B200ACF024 /* QuestPostTabView.swift */,
-				E50FBF772A8FCC7D00ACF024 /* ReceiptListRowView.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		E50FBF7D2A90FAE900ACF024 /* TopTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				E50FBF7E2A90FAFB00ACF024 /* QuestTopTabbar.swift */,
+				E50FBF812A90FB4E00ACF024 /* StatisticsTopTabbar.swift */,
+			);
+			path = TopTabbar;
 			sourceTree = "<group>";
 		};
 		E5AD2A072A8F37C4009F3125 = {
@@ -109,8 +112,8 @@
 		E5AD2A122A8F37C4009F3125 /* BossTestUI */ = {
 			isa = PBXGroup;
 			children = (
+				E50FBF7D2A90FAE900ACF024 /* TopTabbar */,
 				E5AD2A222A8F37CF009F3125 /* View */,
-				E50FBF642A8F9EF200ACF024 /* Tabbar */,
 				E5AD2A172A8F37C6009F3125 /* Assets.xcassets */,
 				E5AD2A192A8F37C6009F3125 /* BossTestUI.entitlements */,
 				E5AD2A1A2A8F37C6009F3125 /* Preview Content */,
@@ -214,14 +217,15 @@
 				E50FBF602A8F938F00ACF024 /* QuestCheckTabView.swift in Sources */,
 				E50FBF722A8FB86B00ACF024 /* StatisticsComponent.swift in Sources */,
 				E5AD2A162A8F37C4009F3125 /* ContentView.swift in Sources */,
+				E50FBF7F2A90FAFB00ACF024 /* QuestTopTabbar.swift in Sources */,
 				E50FBF682A8FA4C300ACF024 /* QuestAddView.swift in Sources */,
 				E50FBF6F2A8FB79600ACF024 /* StatisticsUsedFinishedTabView.swift in Sources */,
 				E50FBF6B2A8FB73600ACF024 /* StatisticsView.swift in Sources */,
 				E50FBF622A8F93B200ACF024 /* QuestPostTabView.swift in Sources */,
-				E50FBF782A8FCC7D00ACF024 /* ReceiptListRowView.swift in Sources */,
+				E50FBF782A8FCC7D00ACF024 /* ReceiptComponent.swift in Sources */,
+				E50FBF822A90FB4E00ACF024 /* StatisticsTopTabbar.swift in Sources */,
 				E5AD2A142A8F37C4009F3125 /* BossTestUIApp.swift in Sources */,
 				E5AD2A262A8F37F0009F3125 /* QuestView.swift in Sources */,
-				E50FBF662A8F9F0300ACF024 /* Tab.swift in Sources */,
 				E50FBF742A8FC92000ACF024 /* ReceiptView.swift in Sources */,
 				E50FBF762A8FCC5200ACF024 /* ReceiptCheckView.swift in Sources */,
 				E50FBF6D2A8FB78500ACF024 /* StatisticsSubmitFinishedTabView.swift in Sources */,

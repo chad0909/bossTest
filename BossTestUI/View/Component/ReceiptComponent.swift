@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReceiptListRowView: View {
+struct ReceiptComponent: View {
     let receipt: Receipt
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -42,8 +42,8 @@ struct ReceiptListRowView: View {
     }
 }
 
-struct ReceiptListRowView_Previews: PreviewProvider {
+struct ReceiptComponent_Previews: PreviewProvider {
     static var previews: some View {
-        ReceiptListRowView(receipt:  Receipt(userName: "chad", imageString: "circle", quest: questList[0])).padding(.vertical, 20).background(.brown)
+        ReceiptComponent(receipt:  Receipt(userName: "chad", imageString: "circle", quest: questList[0])).padding(.vertical, 20).background(.brown)
     }
 }

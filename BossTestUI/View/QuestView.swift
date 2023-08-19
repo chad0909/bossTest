@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct QuestView: View {
-    
     @State private var selectedTab = 0
-    
+    @Namespace var namespace
+    @State private var selectedSection = QuestTitleSection.posting
+    let sectionList: [QuestTitleSection] = [.posting, .reviewing]
+
     var body: some View {
             ZStack{
-                VStack(spacing:0){
+                VStack(spacing: 0){
                     ScrollView{
                         VStack(spacing: 0){
-                            
                             HStack{
                                 Text("퀘스트")
                                     .font(.system(size: 34, weight: .bold))
@@ -25,45 +26,38 @@ struct QuestView: View {
                             .padding(.leading, 16)
                             .padding(.top, 23)
                             
-                            Picker("", selection: $selectedTab) {
-                                Text("게시중").tag(0)
-                                Text("검토중").tag(1)
+                            HStack(spacing: 30) {
+                                ForEach(sectionList, id: \.self) { section in
+                                    QuestTitleTextView(section: section, namespace: namespace, selectedSection: $selectedSection)
+                                        .onTapGesture {
+                                            withAnimation(.easeOut) {
+                                                selectedSection = section
+                                            }
+                                        }
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 10)
+                                    .frame(height: 1)
+                                    .foregroundColor(.gray)
+                                    .offset(y: 18)
                             }
                             
-                            .pickerStyle(.segmented)
-                            .padding()
-                            
-                            if selectedTab == 0 {
-                                QuestCheckTabView()
-                            } else {
+                            if selectedSection == .posting {
                                 QuestPostTabView()
+                            } else {
+                                QuestCheckTabView()
                             }
                             
                             Spacer()
                         }
                     }
                     .padding(.top, 10)
-                    
-                    HStack{
-                        NavigationLink(destination: QuestAddView()) {
-                            Text("퀘스트 추가 +")
-                                .padding(.vertical, 14)
-                                .foregroundColor(Color.black)
-                                .font(.system(size: 20, weight: .semibold))
-                        }
-                        .frame(maxWidth: .infinity)
-                        .background(Color.yellow)
-                    }
-                    
-                    
                     Spacer()
-                    
-                    
                 }
-                
             }
             .background(.yellow.opacity(0.2))
-        
     }
 }
 

@@ -47,7 +47,7 @@ struct ReceiptView: View {
                     LazyVGrid(columns: [GridItem(.flexible())],spacing: 16) {
                         ForEach(receiptList) { receipt in
                             NavigationLink(destination: ReceiptCheckView(receipt: receipt )) {
-                                ReceiptListRowView(receipt: receipt)
+                                ReceiptComponent(receipt: receipt)
                             }
                         }
                         .tint(.black)
