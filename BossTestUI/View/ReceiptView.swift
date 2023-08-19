@@ -33,9 +33,17 @@ struct ReceiptView: View {
     @State var receiptSelection: Receipt?
 
     var body: some View {
-        NavigationView{
-            VStack {
+            VStack (spacing:0){
                 ScrollView {
+                    
+                    HStack{
+                        Text("영수증")
+                            .font(.system(size: 34, weight: .bold))
+                        Spacer()
+                    }
+                    .padding(.leading, 16)
+                    .padding(.top, 23)
+                    
                     LazyVGrid(columns: [GridItem(.flexible())],spacing: 16) {
                         ForEach(receiptList) { receipt in
                             NavigationLink(destination: ReceiptCheckView(receipt: receipt )) {
@@ -50,9 +58,7 @@ struct ReceiptView: View {
                 Spacer()
             }
             .background(Color("BackgroundYellowColor"))
-            .navigationTitle("영수증")
-            .navigationBarTitleDisplayMode(.automatic)
-        }
+        
     }
 }
 

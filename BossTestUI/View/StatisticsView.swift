@@ -51,12 +51,22 @@ struct StatisticsView: View {
     let sectionList: [TitleSection] = [.published, .used]
 
     var body: some View {
-        NavigationView{
+//        NavigationView{
             ZStack{
                 VStack(spacing: 0){
                     
                     ScrollView{
+                        
                         VStack(spacing: 0){
+                            
+                            HStack{
+                                Text("고객 통계")
+                                    .font(.system(size: 34, weight: .bold))
+                                Spacer()
+                            }
+                            .padding(.leading, 16)
+                            .padding(.top, 23)
+                            
                             HStack(spacing: 30) {
                                 ForEach(sectionList, id: \.self) { section in
                                     TitleTextView(section: section, namespace: namespace, selectedSection: $selectedSection)
@@ -84,12 +94,12 @@ struct StatisticsView: View {
                             Spacer()
                         }
                     }
+                    .padding(.top, 10)
                     Spacer()
                 }
-                .navigationBarTitle("고객 통계", displayMode: .large)
             }
             .background(.yellow.opacity(0.2))
-        }
+//        }
     }
 }
 

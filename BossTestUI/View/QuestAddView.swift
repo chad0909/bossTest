@@ -71,7 +71,7 @@ struct QuestAddView: View {
                         alertMessage = true
                     } label: {
                         Text("제출하기")
-                            .padding(.vertical, 14)
+                            .padding(.vertical, 20)
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(Color.black)
                     }
@@ -80,22 +80,24 @@ struct QuestAddView: View {
                     .alert(isPresented: $alertMessage) {
                                        Alert(title: Text("퀘스트를 추가하시겠습니까?"), message: Text("추가 후 수정이 제한되니 유의 부탁드립니다"),
                                              primaryButton:  .default(Text("확인") ,action: {
-                                           
+                                           print("confirm Button")
                                        }),
                                              secondaryButton:.cancel(Text("취소")))
                                    }
                     
                     
                 }
-//                .padding(.bottom, 83)
+                .cornerRadius(20)
+                .padding(.bottom, 20)
+                .padding(.horizontal, 20)
+                
+                
                 
             }
-            
-            
             .navigationBarBackButtonHidden()
             .navigationBarTitle("", displayMode: .inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
